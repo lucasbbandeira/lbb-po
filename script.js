@@ -62,7 +62,7 @@ const projects = [
     category: 'servicos',
     tag: 'Impressão',
     desc: 'Site profissional para serviços de impressão e comunicação visual, com orçamento pelo WhatsApp.',
-    url: 'https://duduimpressao.vercel.app/',
+    url: 'https://eemimpressoes3d.vercel.app/',
     techs: ['Impressão', 'Catálogo', 'WhatsApp']
   },
   {

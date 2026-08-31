@@ -62,7 +62,7 @@ const projects = [
     category: 'servicos',
     tag: 'Impressão',
     desc: 'Site profissional para serviços de impressão e comunicação visual, com orçamento pelo WhatsApp.',
-    url: 'https://eemimpressoes3d.vercel.app/',
+    url: 'https://duduimpressao.vercel.app/',
     techs: ['Impressão', 'Catálogo', 'WhatsApp']
   },
   {
@@ -257,6 +257,15 @@ const projects = [
     url: 'https://dudaviagens.vercel.app/',
     techs: ['Viagens', 'Turismo', 'Portfólio', 'Responsivo'],
     featured: true
+  },
+  {
+    title: 'GM Montagens em Geral',
+    category: 'servicos',
+    tag: 'Montagem & Reparos',
+    desc: 'Site profissional para montagem de móveis, instalações e serviços residenciais, com portfólio, orçamento interativo e atendimento pelo WhatsApp.',
+    url: 'https://gmmontagem.vercel.app/',
+    techs: ['React', 'Orçamento interativo', 'WhatsApp', 'Serviços'],
+    featuredSecondary: true
   }
 ].map((project, index) => ({ ...project, id: index + 1 }));
 
@@ -296,7 +305,8 @@ const els = {
   cursorGlow: document.getElementById('cursorGlow'),
   loader: document.getElementById('pageLoader'),
   form: document.getElementById('contactForm'),
-  featuredButton: document.getElementById('openFeaturedProject')
+  featuredButton: document.getElementById('openFeaturedProject'),
+  gmFeaturedButton: document.getElementById('openGmProject')
 };
 
 function normalizeText(value = '') {
@@ -626,6 +636,18 @@ function setupProjectControls() {
   if (els.featuredButton) {
     els.featuredButton.addEventListener('click', () => {
       openProjectModal(getFeaturedProject());
+    });
+  }
+
+  if (els.gmFeaturedButton) {
+    els.gmFeaturedButton.addEventListener('click', () => {
+      const gmProject = projects.find(
+        (project) => project.title === 'GM Montagens em Geral'
+      );
+
+      if (gmProject) {
+        openProjectModal(gmProject);
+      }
     });
   }
 }
